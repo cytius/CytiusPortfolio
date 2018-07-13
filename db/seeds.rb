@@ -25,7 +25,8 @@ puts "10 blogs created"
 5.times do |skill|
   Skill.create!(
     title: "Rails #{skill}",
-    percent_utilized: 15
+    percent_utilized: 15,
+    badge: Placeholder.image_generator(height: '300', width: '300')
     )
 end
 puts "5 skills created"
@@ -51,3 +52,10 @@ end
 end
 
 puts "9 portfolio items created"
+
+3.times do |technology|
+    Portfolio.last.technologies.create!(
+        name: "Technology #{technology}"
+        )
+end
+puts "3 technologies created"
